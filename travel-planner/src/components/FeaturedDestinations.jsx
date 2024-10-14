@@ -1,17 +1,19 @@
+import React from 'react';
+
 const FeaturedDestinations = ({ destinations }) => {
-    return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+  return (
+    <div className="mt-8 w-full">
+      <h2 className="text-3xl font-bold text-center mb-4">Featured Destinations</h2>
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {destinations.map((destination) => (
-          <div key={destination.id} className="bg-white p-4 shadow-md rounded-md">
-            <img src={destination.image_url} alt={destination.name} className="w-full h-48 object-cover rounded-md" />
-            <h3 className="mt-4 text-lg font-bold">{destination.name}</h3>
-            <p>{destination.country}</p>
-            <p className="text-sm text-gray-600">{destination.top_attractions.join(", ")}</p>
-          </div>
+          <li key={destination.id} className="bg-white text-black p-4 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold">{destination.name}</h3>
+            <p>{destination.iataCode}</p>
+          </li>
         ))}
-      </div>
-    );
-  };
-  
-  export default FeaturedDestinations;
-  
+      </ul>
+    </div>
+  );
+};
+
+export default FeaturedDestinations;

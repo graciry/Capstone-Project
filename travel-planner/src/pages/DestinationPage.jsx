@@ -4,7 +4,7 @@ const DestinationPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative bg-cover bg-center h-96" style={{ backgroundImage: 'url("/src/assets/destination.jpg")' }}>
+      <div className="relative bg-cover bg-center h-96" style={{ backgroundImage: 'url("/src/assets/Paris.jpg")' }}>
         <div className="bg-black bg-opacity-50 h-full flex flex-col justify-center items-center">
           <h1 className="text-5xl font-bold text-white">Paris, France</h1>
           <p className="text-xl text-white mt-4">The city of lights, home to the Eiffel Tower and rich culture.</p>

@@ -12,22 +12,23 @@ const Header = () => {
       <nav className="flex space-x-5">
         <ul className="flex space-x-5">
           <li>
-            <Link to="/" className="text-[16px] font-bold uppercase hover:text-blue-500">
+            <Link to="/" className="text-[16px] font-bold hover:text-blue-500">
               Home
             </Link>
           </li>
+          
           <li>
-            <Link to="/itinerary" className="text-[16px] font-bold uppercase hover:text-blue-500">
-              Itinerary Planner
-            </Link>
-          </li>
-          <li>
-            <Link to="/destination" className="text-[16px] font-bold uppercase hover:text-blue-500">
+            <Link to="/destination" className="text-[16px] font-bold hover:text-blue-500">
               Destination Details
             </Link>
           </li>
           <li>
-            <Link to="/account" className="text-[16px] font-bold uppercase hover:text-blue-500">
+            <Link to="/itinerary" className="text-[16px] font-bold hover:text-blue-500">
+              Itinerary Planner
+            </Link>
+          </li>
+          <li>
+            <Link to="/account" className="text-[16px] font-bold hover:text-blue-500">
               Account
             </Link>
           </li>
