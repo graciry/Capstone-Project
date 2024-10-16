@@ -1,43 +1,15 @@
-import axios from 'axios';
+// amadeus.js
 
-// Function to authenticate and retrieve access token from Amadeus
-export const authenticateAmadeus = async () => {
-  try {
-    const response = await axios.post('https://test.api.amadeus.com/v1/security/oauth2/token', null, {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      params: {
-        grant_type: 'client_credentials',
-        client_id: import.meta.env.VITE_AMADEUS_API_KEY,
-        client_secret: import.meta.env.VITE_AMADEUS_API_SECRET,
-      },
-    });
-
-    return response.data.access_token;
-  } catch (error) {
-    console.error('Error during authentication:', error);
-    throw new Error('Authentication failed');
-  }
-};
-
-// Function to fetch destination data from Amadeus
 export const fetchDestinations = async (query) => {
   try {
-    const token = await authenticateAmadeus(); // Get the access token
-    const response = await axios.get('https://test.api.amadeus.com/v1/reference-data/locations', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      params: {
-        keyword: query,
-        subType: 'CITY',
-      },
-    });
-
-    return response.data.data; // Return the destination data
+    const response = await fetch(`http://localhost:5000/api/destinations?keyword=${query}`);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error('Error fetching destinations:', error);
-    throw new Error('Failed to fetch destination data');
+    console.error('Failed to fetch destinations:', error);
+    throw error;  // Re-throw the error to be handled by the caller
   }
 };

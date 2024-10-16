@@ -7,6 +7,11 @@ const SearchBar = ({ setDestinations }) => {
   const [error, setError] = useState(null);
 
   const handleSearch = async () => {
+    if (!query.trim()) {
+      setError('Please enter a destination to search.');
+      return;
+    }
+    
     setLoading(true);
     setError(null);  // Reset any previous errors
     try {

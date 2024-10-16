@@ -1,24 +1,23 @@
+// server.js (or similar backend file)
 const express = require('express');
 const Amadeus = require('amadeus');
-const cors = require('cors');
-
-const app = express();
-app.use(cors());  // Enable CORS for all routes
 
 const amadeus = new Amadeus({
-  clientId: process.env.AMADEUS_CLIENT_ID,  // Ensure you set these in your .env file
-  clientSecret: process.env.AMADEUS_CLIENT_SECRET,
+  clientId: 'YOUR_API_KEY',
+  clientSecret: 'YOUR_API_SECRET',
 });
 
+const app = express();
+
 app.get('/api/destinations', async (req, res) => {
-  const keyword = req.query.keyword;
+  const query = req.query.keyword;
   try {
     const response = await amadeus.referenceData.locations.get({
-      keyword: keyword,
+      keyword: query,
       subType: 'CITY,AIRPORT',
       'page[limit]': 5,
     });
-    res.json(response.data);
+    res.json(response.data);  // Send destinations data to frontend
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch destinations' });
   }
