@@ -3,21 +3,23 @@ const express = require('express');
 const Amadeus = require('amadeus');
 
 const amadeus = new Amadeus({
-  clientId: 'YOUR_API_KEY',
-  clientSecret: 'YOUR_API_SECRET',
+  clientId: 'f1GuSEnl5Bllvr6NbXEtyGfVKwniC8G6',
+  clientSecret: 'AdhttvAoc5acowZG',
 });
 
 const app = express();
 
-app.get('/api/destinations', async (req, res) => {
+app.post('/api/destinations', async (req, res) => {
   const query = req.query.keyword;
   try {
-    const response = await amadeus.referenceData.locations.get({
+    const response = await amadeus.referenceData.locations.post({
       keyword: query,
       subType: 'CITY,AIRPORT',
       'page[limit]': 5,
     });
-    res.json(response.data);  // Send destinations data to frontend
+    res.json(response.data);
+    console.log(response.data); // Send destinations data to frontend
+    return response.data;
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch destinations' });
   }

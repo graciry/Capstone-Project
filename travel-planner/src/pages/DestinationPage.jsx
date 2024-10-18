@@ -68,14 +68,7 @@ const DestinationPage = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-6 mt-8">
-        <div className="container mx-auto text-center">
-          <p>&copy; 2024 Travel Planner. All rights reserved.</p>
-          <div className="mt-4">
-            <a href="#" className="text-blue-500">Facebook</a> | <a href="#" className="text-blue-500">Twitter</a>
-          </div>
-        </div>
-      </footer>
+     
     </div>
   );
 };

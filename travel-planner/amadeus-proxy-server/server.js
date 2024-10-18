@@ -1,6 +1,7 @@
 const express = require('express');
 const Amadeus = require('amadeus');
 const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());  // Enable CORS for all routes
@@ -19,6 +20,8 @@ app.get('/api/destinations', async (req, res) => {
       'page[limit]': 5,
     });
     res.json(response.data);
+    console.log(response.data);
+    return response.data;
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch destinations' });
   }

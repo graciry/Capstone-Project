@@ -7,7 +7,7 @@ import DestinationPage from './pages/DestinationPage';
 import ItineraryPage from './pages/ItineraryPage';
 import AccountPage from './pages/AccountPage';
 import { useState } from 'react';
-import SearchBar from './components/SearchBar';
+
 
 function App() {
   const [destinations, setDestinations] = useState([]); // State for fetched destinations
@@ -16,7 +16,6 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <SearchBar setDestinations={setDestinations} />
 
         <main className="flex-grow">
           <Routes>
