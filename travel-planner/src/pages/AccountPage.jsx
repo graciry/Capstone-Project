@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import account from '../assets/account.jpg';
+
 
 const AccountPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
@@ -21,7 +23,7 @@ const AccountPage = () => {
 
   return (
     <div className="min-h-screen bg-cover bg-center flex items-center justify-center p-6"
-      style={{ backgroundImage: 'url("/src/assets/account.jpg")' }}> 
+      style={{ backgroundImage: `url(${account})` }}> 
       {/* Update the path to your actual image */}
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
         {!isLoggedIn ? (

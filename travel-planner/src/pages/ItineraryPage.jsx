@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import destination from '../assets/destination.jpg';
 
 const ItineraryPage = () => {
   // State for form inputs
@@ -56,7 +57,7 @@ const ItineraryPage = () => {
   return (
     <div
       className="min-h-screen bg-cover bg-center flex flex-col justify-between"
-      style={{ backgroundImage: "url('/src/assets/itinerary.jpg')" }} // Update with your image path
+      style={{ backgroundImage: `url(${destination})` }} // Update with your image path
     >
       {/* Plan Your Trip Form */}
       <section className="bg-white bg-opacity-70 p-6 rounded-md m-8 shadow-lg">

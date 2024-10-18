@@ -1,13 +1,21 @@
 import React from 'react';
+import paris from '../assets/Paris.jpg';
+import eiffel from '../assets/eiffel.jpg';
+import louvre from '../assets/louvre.jpg';
 
 const DestinationPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative bg-cover bg-center h-96" style={{ backgroundImage: 'url("/src/assets/Paris.jpg")' }}>
+      <div
+        className="relative bg-cover bg-center h-96"
+        style={{ backgroundImage: `url(${paris})` }}
+      >
         <div className="bg-black bg-opacity-50 h-full flex flex-col justify-center items-center">
           <h1 className="text-5xl font-bold text-white">Paris, France</h1>
-          <p className="text-xl text-white mt-4">The city of lights, home to the Eiffel Tower and rich culture.</p>
+          <p className="text-xl text-white mt-4">
+            The city of lights, home to the Eiffel Tower and rich culture.
+          </p>
           <button className="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700">
             Plan Your Trip
           </button>
@@ -36,14 +44,26 @@ const DestinationPage = () => {
         <div className="grid grid-cols-3 gap-6 mt-6">
           {/* Attraction Cards */}
           <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-            <img src="/src/assets/eiffel.jpg" alt="Attraction 1" className="h-40 w-full object-cover rounded-md" />
+            <img
+              src={eiffel}
+              alt="Attraction 1"
+              className="h-40 w-full object-cover rounded-md"
+            />
             <h3 className="mt-4 font-semibold text-lg">Eiffel Tower</h3>
-            <p className="mt-2 text-sm">Iconic iron lattice tower located on the Champ de Mars in Paris.</p>
+            <p className="mt-2 text-sm">
+              Iconic iron lattice tower located on the Champ de Mars in Paris.
+            </p>
           </div>
           <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-            <img src="/src/assets/louvre.jpg" alt="Attraction 2" className="h-40 w-full object-cover rounded-md" />
+            <img
+              src={louvre}
+              alt="Attraction 2"
+              className="h-40 w-full object-cover rounded-md"
+            />
             <h3 className="mt-4 font-semibold text-lg">Louvre Museum</h3>
-            <p className="mt-2 text-sm">World's largest art museum, located in the historic Louvre Palace.</p>
+            <p className="mt-2 text-sm">
+              World's largest art museum, located in the historic Louvre Palace.
+            </p>
           </div>
         </div>
       </div>
@@ -54,21 +74,32 @@ const DestinationPage = () => {
         <form className="grid grid-cols-3 gap-6 mt-4">
           <div>
             <label className="block font-medium mb-2">Departure City</label>
-            <input type="text" className="w-full px-4 py-2 border rounded-md focus:outline-none" placeholder="New York" />
+            <input
+              type="text"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none"
+              placeholder="New York"
+            />
           </div>
           <div>
             <label className="block font-medium mb-2">Arrival City</label>
-            <input type="text" className="w-full px-4 py-2 border rounded-md focus:outline-none" placeholder="Paris" />
+            <input
+              type="text"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none"
+              placeholder="Paris"
+            />
           </div>
           <div>
             <label className="block font-medium mb-2">Departure Date</label>
-            <input type="date" className="w-full px-4 py-2 border rounded-md focus:outline-none" />
+            <input
+              type="date"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none"
+            />
           </div>
         </form>
       </div>
 
       {/* Footer */}
-     
+      {/* Add your footer content here */}
     </div>
   );
 };

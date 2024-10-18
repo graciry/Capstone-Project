@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import FeaturedDestinations from '../components/FeaturedDestinations';
+import backgroundImage from '../assets/background.jpg';
 
 const HomePage = () => {
   const [destinations, setDestinations] = useState([]);
@@ -8,7 +9,7 @@ const HomePage = () => {
   return (
     <div
       className="relative h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url('/src/assets/background.jpg')` }}  // Background image path
+      style={{ backgroundImage: `url(${backgroundImage})` }}  // Background image path
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
